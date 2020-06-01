@@ -16,7 +16,7 @@ class App extends Component {
       {
         id: 2,
         title: "Dinner with wife",
-        completed: true,
+        completed: false,
       },
       {
         id: 3,
@@ -45,13 +45,18 @@ class App extends Component {
     });
   };
 
+  //Add Todo
+  addTodo = (title) => {
+    console.log(title);
+  };
+
   render() {
     return (
       <div className="App">
         <div className="container">
           {" "}
           <Header />
-          <AddTodo />
+          <AddTodo addTodo={this.addTodo} />
           <Todos
             todos={this.state.todos}
             markComplete={this.markComplete}
